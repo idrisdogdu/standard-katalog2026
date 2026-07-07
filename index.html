@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masaüstü Flipbook Katalog 2026 (Kesin Zoom Çözümü)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+            user-select: none;
+        }
+        
+        #flipbook-wrapper {
+            position: relative;
+            cursor: pointer;
+            /* Performans ve akıcılık için CSS transform kullanıyoruz */
+            transition: transform 0.3s ease-out; 
+            transform-origin: center center;
+        }
+        
+        #flipbook-container {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        }
+        
+        .page {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* Zoom açıkken imleç el işaretine dönsün */
+        body.zoom-active #flipbook-wrapper {
+            cursor: grab;
+        }
+        body.zoom-active #flipbook-wrapper:active {
+            cursor: grabbing;
+        }
+
+        #zoom-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #ccc;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+<div id="flipbook-wrapper">
+    <div id="flipbook-container">
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_001.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_002.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_003.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_004.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_005.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_006.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_007.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_008.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_009.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_010.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_011.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_012.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_013.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_014.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_015.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_016.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_017.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_018.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_019.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_020.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_021.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_022.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_023.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_024.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_025.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_026.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_027.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_028.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_029.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_030.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_031.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_032.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_033.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_034.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_035.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_036.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_037.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_038.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_039.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_040.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_041.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_042.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_043.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_044.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_045.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_046.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_047.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_048.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_049.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_050.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_051.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_052.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_053.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_054.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_055.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_056.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_057.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_058.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_059.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_060.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_061.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_062.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_063.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_064.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_065.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_066.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_067.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_068.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_069.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_070.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_071.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_072.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_073.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_074.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_075.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_076.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_077.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_078.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_079.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_080.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_081.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_082.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_083.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_084.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_085.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_086.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_087.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_088.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_089.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_090.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_091.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_092.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_093.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_094.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_095.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_096.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_097.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_098.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_099.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_100.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_101.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_102.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_103.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_104.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_105.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_106.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_107.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_108.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_109.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_110.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_111.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_112.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_113.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_114.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_115.jpg');"></div>
+        <div class="page" style="background-image:url('images/catalog 2026_Sayfa_116.jpg');"></div>
+    </div>
+</div>
+
+<div id="zoom-info">Kullanım: <br>Herhangi Bir Yere Çift Tıkla: 2 Kat Yaklaş / Uzaklaş <br>Yaklaşınca: Mouse Sol Tıkla Tut ve Sürükle</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var isZoomed = false;
+        var scale = 1;
+        var posX = 0, posY = 0;
+        var isDragging = false;
+        var startX, startY;
+
+        // 1. Flipbook'u Başlat
+        $('#flipbook-container').turn({
+            width: 1000,          
+            height: 700,         
+            autoCenter: true,    
+            duration: 600
+        });
+
+        // 2. Çift Tıklama Olayı (Wrapper düzeyinde kesintisiz algılama)
+        $('#flipbook-wrapper').dblclick(function(e) {
+            if (isZoomed) {
+                // Zoom Kapat
+                scale = 1;
+                posX = 0;
+                posY = 0;
+                $(this).css('transform', 'scale(' + scale + ') translate(0px, 0px)');
+                $('body').removeClass('zoom-active');
+                isZoomed = false;
+            } else {
+                // Zoom Aç (2 Kat Yaklaş)
+                scale = 2;
+                $(this).css('transform', 'scale(' + scale + ')');
+                $('body').addClass('zoom-active');
+                isZoomed = true;
+            }
+        });
+
+        // 3. Mouse ile Tut-Sürükle (Pan) İşlemi (Sadece Zoom Açıkken)
+        $('#flipbook-wrapper').mousedown(function(e) {
+            if (!isZoomed) return;
+            isDragging = true;
+            startX = e.clientX - posX;
+            startY = e.clientY - posY;
+            return false; 
+        });
+
+        $(document).mousemove(function(e) {
+            if (!isDragging || !isZoomed) return;
+            posX = e.clientX - startX;
+            posY = e.clientY - startY;
+            
+            // Kataloğun ekrandan tamamen çıkıp kaybolmaması için basit sınır kontrolü
+            if (posX > 400) posX = 400;
+            if (posX < -400) posX = -400;
+            if (posY > 300) posY = 300;
+            if (posY < -300) posY = -300;
+
+            // CSS translate'i scale ile birlikte vermemiz gerekiyor yoksa zoom bozulur
+            $('#flipbook-wrapper').css('transform', 'scale(' + scale + ') translate(' + (posX / scale) + 'px, ' + (posY / scale) + 'px)');
+        });
+
+        $(document).mouseup(function() {
+            isDragging = false;
+        });
+
+        // 4. Klavye Yön Tuşları (Sadece normal boyuttayken çalışır)
+        $(window).bind('keydown', function(e){
+            if (isZoomed) return; 
+            if (e.keyCode == 37) $('#flipbook-container').turn('previous'); 
+            if (e.keyCode == 39) $('#flipbook-container').turn('next');     
+        });
+    });
+</script>
+
+</body>
+</html>
